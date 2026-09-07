@@ -4,7 +4,13 @@ metadata:
   name: nginx-demo
   namespace: devops-demo
 spec:
-  replicas: 2
+  replicas: 4
+
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
 
   selector:
     matchLabels:
@@ -18,7 +24,6 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: nginx:latest
-
+          image: nginx:1.28
           ports:
             - containerPort: 80
