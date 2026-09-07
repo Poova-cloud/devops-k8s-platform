@@ -1,0 +1,19 @@
+*.log
+*.tmp
+.env
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+
+# Kubernetes sensitive files
+*.kubeconfig
+
+# Keys
+*.pem
+*.key
+
+# Credentials
+.aws/
