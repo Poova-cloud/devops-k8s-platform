@@ -17,3 +17,4 @@
 
 # Credentials
 .aws/
+k8s/base/nginx-secret.yaml
