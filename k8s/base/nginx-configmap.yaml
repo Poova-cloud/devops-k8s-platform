@@ -12,8 +12,8 @@ data:
       <title>DevOps Kubernetes Project</title>
     </head>
     <body>
-      <h1>DevOps Kubernetes Platform</h1>
-      <p>Application running successfully on Kubernetes.</p>
-      <p>Configuration loaded from Kubernetes ConfigMap.</p>
+      <h1>DevOps Kubernetes Platform - Version 2</h1>
+      <p>Kubernetes ConfigMap update completed successfully.</p>
+      <p>No Docker image rebuild was required.</p>
     </body>
     </html>
