@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: nginx-demo
   namespace: devops-demo
+
 spec:
   replicas: 4
 
@@ -27,3 +28,12 @@ spec:
           image: nginx:1.28
           ports:
             - containerPort: 80
+
+          volumeMounts:
+            - name: nginx-html
+              mountPath: /usr/share/nginx/html
+
+      volumes:
+        - name: nginx-html
+          configMap:
+            name: nginx-config

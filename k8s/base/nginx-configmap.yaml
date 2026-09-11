@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-config
+  namespace: devops-demo
+
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>DevOps Kubernetes Project</title>
+    </head>
+    <body>
+      <h1>DevOps Kubernetes Platform</h1>
+      <p>Application running successfully on Kubernetes.</p>
+      <p>Configuration loaded from Kubernetes ConfigMap.</p>
+    </body>
+    </html>
