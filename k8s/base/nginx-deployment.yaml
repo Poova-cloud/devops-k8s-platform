@@ -28,6 +28,18 @@ spec:
           image: nginx:1.28
           ports:
             - containerPort: 80
+          env:
+            - name: APP_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: nginx-secret
+                  key: APP_USERNAME
+
+            - name: APP_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: nginx-secret
+                  key: APP_PASSWORD
 
           volumeMounts:
             - name: nginx-html
