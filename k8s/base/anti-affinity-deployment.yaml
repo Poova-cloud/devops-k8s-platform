@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: anti-affinity-demo
+  namespace: devops-demo
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: anti-affinity-demo
+
+  template:
+    metadata:
+      labels:
+        app: anti-affinity-demo
+
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: app
+                    operator: In
+                    values:
+                      - anti-affinity-demo
+              topologyKey: kubernetes.io/hostname
+
+      containers:
+        - name: nginx
+          image: nginx:1.28
