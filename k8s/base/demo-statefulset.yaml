@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: demo-statefulset
+  namespace: devops-demo
+
+spec:
+  serviceName: demo-statefulset
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: demo-statefulset
+
+  template:
+    metadata:
+      labels:
+        app: demo-statefulset
+
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.28
+          ports:
+            - containerPort: 80
