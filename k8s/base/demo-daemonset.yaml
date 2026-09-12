@@ -15,6 +15,10 @@ spec:
         app: demo-daemonset
 
     spec:
+      tolerations:
+        - key: "node-role.kubernetes.io/control-plane"
+          operator: "Exists"
+          effect: "NoSchedule"
       containers:
         - name: demo-daemonset
           image: busybox:1.36
